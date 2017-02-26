@@ -8,5 +8,79 @@
     <artifactId>connecting-spark-mongodb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+    <developers>
+        <developer>
+            <id>mbesson</id>
+            <name>Mathieu Besson</name>
+            <email>mathieu.besson@tuta.io</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>France/Paris</timezone>
+        </developer>
+    </developers>
+
+    <properties>
+        <scala.version>2.11</scala.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>2.4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDir>src/main/scala</sourceDir>
+                    <jvmArgs>
+                        <jvmArg>-Xms64m</jvmArg>
+                        <jvmArg>-Xmx1024m</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
