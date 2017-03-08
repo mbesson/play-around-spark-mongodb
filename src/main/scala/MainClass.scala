@@ -1,7 +1,4 @@
-import com.mongodb.spark._
-import com.mongodb.spark.config._
-import com.mongodb.spark.rdd.MongoRDD
-import org.bson.Document
+import com.mongodb.spark.MongoSpark
 import org.apache.spark.sql.SparkSession
 
 
@@ -18,6 +15,17 @@ object MainClass extends App{
                           .config("spark.mongodb.output.uri", "mongodb://127.0.0.1/nasa.astronautTotals")
                           .getOrCreate()
 
-  spark.catalog.listDatabases()
+  val load = MongoSpark.load(spark)
+
+  println("-------------------------------------")
+  println("Number of documents in eva collection")
+  println(load.count())
+  println("-------------------------------------")
+  println("\n")
+
+  println(load.printSchema())
+
+
+  spark.close()
 
 }

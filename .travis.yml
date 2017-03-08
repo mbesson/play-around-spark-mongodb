@@ -1,0 +1,15 @@
+sudo: false
+
+language: scala
+
+scala:
+  - 2.11
+
+script: mvn clean install
+
+jdk:
+  - oraclejdk8
+
+notifications:
+  email:
+    - mathieu.besson@tuta.io

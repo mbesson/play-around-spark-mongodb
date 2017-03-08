@@ -1,0 +1,8 @@
+
+.gitignore
+.idea/
+play-around-spark-mongodb.iml
+target
+derby.log
+metastore_db
+spark-warehouse
