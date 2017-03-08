@@ -3,5 +3,5 @@
 play-around-spark-mongodb.iml
 target
 derby.log
-metastore_db/
+metastore_db
 spark-warehouse
